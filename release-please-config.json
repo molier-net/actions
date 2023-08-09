@@ -1,0 +1,10 @@
+{
+    "release-type": "simple",
+    "separate-pull-requests": true,
+    "sequential-calls": true,
+    "packages": {
+        "release-please-packages": {
+            "component": "release-please-packages"
+        }
+    }
+}
