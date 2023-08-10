@@ -1,7 +1,5 @@
 {
-    "extends": "@tsconfig/node16/tsconfig.json",
-    "exclude": [
-        "node_modules",
-        "**/*.test.ts"
-    ]
+  "extends": "@tsconfig/node16/tsconfig.json",
+  "include": [".eslintrc.js", "**/jest.config.js", "commitlint.config.js"],
+  "exclude": ["node_modules", "**/*.test.ts"]
 }

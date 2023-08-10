@@ -1,4 +1,8 @@
+name: Test Release-Please-Packages
 on: [workflow_dispatch]
+
+permissions:
+  contents: read
 
 jobs:
   test:
@@ -16,4 +20,8 @@ jobs:
         working-directory: ./release-please-packages
       - run: yarn ci:package
         working-directory: ./release-please-packages
-      - uses: ./release-please-packages/
+      - id: packages
+        uses: ./release-please-packages/
+        with:
+          config-file: .
+      - run: echo "${{ steps.packages.outputs.packages }}"
