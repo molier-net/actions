@@ -9,6 +9,7 @@ on:
   issue_comment: {}
   issues: {}
   label: {}
+  package: {}
   pull_request: {}
   pull_request_review: {}
   pull_request_review_comment: {}
@@ -20,7 +21,10 @@ on:
     - cron: 0 0 1 * *
   workflow_call: {}
   workflow_dispatch: {}
-  workflow_run: {}
+  workflow_run:
+    workflows:
+      - Renovate
+  
   
 permissions:
   contents: read
