@@ -1,0 +1,20 @@
+name: Renovate Dependency Dashboard
+
+on:
+  issues:
+    types:
+      - opened
+      - edited
+      - deleted
+      - closed
+      - reopened
+  issue_comment: {}
+
+permissions:
+  contents: read
+
+jobs:
+  renovate:
+    if: github.event.issue.title == 'Dependency Dashboard' && github.event.issue.user.login == 'molier-net-actions-bot[bot]'
+    uses: ./.github/workflows/renovate.yaml
+    secrets: inherit
