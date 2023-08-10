@@ -35,11 +35,11 @@ jobs:
           cat > /tmp/github.json <<EOF
           ${{ toJSON(github) }}
           EOF
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@0b7f8abb1508181956e8e162db84b466c27e18ce # v3
         with:
           name: github.json
           path: /tmp/github.json
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@0b7f8abb1508181956e8e162db84b466c27e18ce # v3
         with:
           name: event.json
           path: ${{ github.event_path }}
