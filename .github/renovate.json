@@ -5,7 +5,8 @@
     ":automergeDigest",
     ":assignAndReview(RemkoMolier)",
     ":labels(renovate,renovate/{{depName}})",
-    ":pinAllExceptPeerDependencies"
+    ":pinAllExceptPeerDependencies",
+    "helpers:pinGitHubActionDigests"
   ],
   "baseBranches": ["main"],
   "rebaseWhen": "conflicted",
