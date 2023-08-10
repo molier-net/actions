@@ -15,5 +15,5 @@ jobs:
       contents: write
       pull-requests: write
     steps:
-      - uses: actions/checkout@v3
-      - uses: trunk-io/trunk-action/upgrade@v1.1.7
+      - uses: actions/checkout@c85c95e3d7251135ab7dc9ce3241c5835cc595a9 # v3
+      - uses: trunk-io/trunk-action/upgrade@883e222ef19201ad402ef73e58101ec8186d7d54 # v1.1.7
