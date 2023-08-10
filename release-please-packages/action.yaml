@@ -1,0 +1,19 @@
+name: release-please-packages
+description: Retrieve defined packaged from a release-please configuration file
+inputs:
+  token:
+    description: GitHub token for accessing the release-please configuration file. Defaults to using secrets.GITHUB_TOKEN
+    required: true
+    default: ${{ github.token }}
+  config-file:
+    description: Where can the config file be found in the project?
+    required: false
+  manifest-file:
+    description: Where can the manifest file be found in the project?
+    required: false
+outputs:
+  packages:
+    description: JSON Object containing an array with the names of the packages
+runs:
+  using: node16
+  main: dist/index.js

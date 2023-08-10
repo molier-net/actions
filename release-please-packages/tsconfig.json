@@ -1,0 +1,7 @@
+{
+  "extends": "../tsconfig.json",
+
+  "compilerOptions": {},
+  "include": ["./src/**/*.ts", "../packages/github-actions/src/octokit.ts"],
+  "exclude": ["./lib", "./dist"]
+}

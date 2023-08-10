@@ -1,0 +1,15 @@
+{
+  "extends": "../tsconfig.build.json",
+  "compilerOptions": {
+    "outDir": "./lib",
+    "rootDir": "./src",
+    "composite": true,
+    "plugins": []
+  },
+  "include": ["./src/**/*.ts"],
+  "references": [
+    {
+      "path": "../packages/github-actions/tsconfig.build.json"
+    }
+  ]
+}

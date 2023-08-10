@@ -1,0 +1,27 @@
+{
+  "name": "release-please-packages",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Determine packages defined in release-please configuration",
+  "main": "lib/index.js",
+  "scripts": {
+    "clean": "rm -rf lib/ dist/ tsconfig.build.tsbuildinfo",
+    "generate": "json2ts -i schemas/ -o src/types && prettier --write src/types/*.ts",
+    "run": "ts-node src/index.ts",
+    "build": "tsc --build tsconfig.build.json",
+    "format": "prettier --write **/*.ts",
+    "format-check": "prettier --check **/*.ts",
+    "lint": "eslint **/*.ts",
+    "package": "ncc build --source-map --license licenses.txt",
+    "test": "jest",
+    "ci:package": "yarn clean && yarn generate && yarn build && yarn package"
+  },
+  "dependencies": {
+    "@local/github-actions": "0.0.0",
+    "@actions/github": "5.1.1",
+    "@octokit/openapi-types": "12.11.0"
+  },
+  "devDependencies": {
+    "json-schema-to-typescript": "13.0.2"
+  }
+}
