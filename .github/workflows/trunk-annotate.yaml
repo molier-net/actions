@@ -2,8 +2,13 @@ name: Trunk Annotate
 
 on:
   workflow_run:
-    workflows: ["Pull Request"]
-    types: [completed]
+    workflows:
+      - Pull Request
+    types:
+      - completed
+
+permissions:
+  contents: read
 
 jobs:
   trunk_annotate:
