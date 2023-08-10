@@ -1,0 +1,40 @@
+name: Github Event Debug
+
+on:
+  branch_protection_rule: {}
+  check_run: {}
+  check_suite: {}
+  fork: {}
+  gollum: {}
+  issue_comment: {}
+  issues: {}
+  label: {}
+  pull_request: {}
+  pull_request_review: {}
+  pull_request_review_comment: {}
+  pull_request_target: {}
+  push: {}
+  registry_package: {}
+  release: {}
+  schedule: 
+    - cron: 0 0 1 * *
+  workflow_call: {}
+  workflow_dispatch: {}
+  workflow_run: {}
+  
+permissions:
+  contents: read
+  
+jobs:
+  debug:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "${{ toJSON(github) }}" > /tmp/github.json
+      - uses: actions/upload-artifact@v3
+        with:
+          name: github.json
+          path: /tmp/github.json
+      - uses: actions/upload-artifact@v3
+        with:
+          name: event.json
+          path: ${{ github.event_path }}
