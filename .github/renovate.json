@@ -1,0 +1,102 @@
+{
+    "extends": [
+        "config:recommended",
+        ":automergeMinor",
+        ":automergeDigest",
+        ":assignAndReview(RemkoMolier)",
+        ":labels(renovate,renovate/{{depName}})",
+        ":pinAllExceptPeerDependencies"
+    ],
+    "baseBranches": [
+        "main"
+    ],
+    "rebaseWhen": "conflicted",
+    "labels": [
+        "dependencies"
+    ],
+    "automergeStrategy": "merge-commit",
+    "ignoreTests": false,
+    "packageRules": [
+        {
+            "description": "Auto-merge minor updates on github actions",
+            "matchManagers": [
+                "github-actions"
+            ],
+            "matchUpdateTypes": [
+                "minor",
+                "patch"
+            ],
+            "automerge": true
+        },
+        {
+            "description": "Auto-merge test packages",
+            "matchPackageNames": [
+                "jest",
+                "ts-jest",
+                "@types/jest"
+            ],
+            "matchPackagePrefixes": [
+                "jest-"
+            ],
+            "groupName": "jest",
+            "automerge": true
+        },
+        {
+            "description": "Auto-merge lint packages",
+            "matchPackageNames": [
+                "eslint"
+            ],
+            "matchPackagePrefixes": [
+                "eslint-",
+                "@typescript-eslint/"
+            ],
+            "groupName": "eslint",
+            "automerge": true
+        },
+        {
+            "description": "Restrict the version supported in GitHub Actions",
+            "matchPackageNames": [
+                "node",
+                "@types/node"
+            ],
+            "groupName": "node",
+            "allowedVersions": "16.x"
+        },
+        {
+            "description": "Disable pinning of node version",
+            "matchPackageNames": [
+                "node"
+            ],
+            "matchFileNames": [
+                "**/action.yaml",
+                "**/action.yml",
+                "package.json"
+            ],
+            "rangeStrategy": "auto"
+        },
+        {
+            "matchFileNames": [
+                "*/**"
+            ],
+            "additionalBranchPrefix": "{{packageFileDir}}-",
+            "commitMessageSuffix": "({{packageFileDir}})",
+            "excludePackageNames": [
+                "@types/node"
+            ]
+        }
+    ],
+    "regexManagers": [
+        {
+            "description": "Update using field in action.yaml",
+            "fileMatch": [
+                "^action.ya?ml$",
+                "^.+/action.ya?ml$"
+            ],
+            "matchStrings": [
+                "using: 'node(?<currentValue>\\d+)'"
+            ],
+            "depNameTemplate": "node",
+            "datasourceTemplate": "npm"
+        }
+    ]
+}

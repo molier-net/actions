@@ -1,0 +1,24 @@
+name: Renovate Validate
+
+on:
+  pull_request:
+    paths:
+      - .github/workflows/renovate-validate.yaml
+      - .github/renovate.json
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: read
+
+jobs:
+  renovate_validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 18
+      - run: npx --package=renovate -- renovate-config-validator .github/renovate.json
