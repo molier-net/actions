@@ -8,7 +8,7 @@
   "devDependencies": {
     "@tsconfig/node16": "16.1.1",
     "@types/jest": "29.5.12",
-    "@types/node": "16.18.86",
+    "@types/node": "16.18.87",
     "@typescript-eslint/eslint-plugin": "7.1.1",
     "@typescript-eslint/parser": "7.1.1",
     "@vercel/ncc": "0.38.1",
