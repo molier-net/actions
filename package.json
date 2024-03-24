@@ -6,7 +6,7 @@
     "packages/*"
   ],
   "devDependencies": {
-    "@tsconfig/node16": "16.1.1",
+    "@tsconfig/node16": "16.1.2",
     "@types/jest": "29.5.12",
     "@types/node": "16.18.91",
     "@typescript-eslint/eslint-plugin": "7.3.1",
