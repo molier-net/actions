@@ -19,4 +19,4 @@ jobs:
 
     steps:
       - uses: actions/checkout@f43a0e5ff2bd294095638e18286ca9a3d1956744 # v3
-      - uses: trunk-io/trunk-action@540e7fe497a45ae76370d26d95cc249059c4ac3a # v1.1.12
+      - uses: trunk-io/trunk-action@da67635060feab46c164bc130690e61864a5d13b # v1.1.13
