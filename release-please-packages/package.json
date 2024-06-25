@@ -22,6 +22,6 @@
     "@octokit/openapi-types": "12.11.0"
   },
   "devDependencies": {
-    "json-schema-to-typescript": "13.1.2"
+    "json-schema-to-typescript": "14.1.0"
   }
 }
