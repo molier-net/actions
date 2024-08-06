@@ -30,10 +30,10 @@ jobs:
 
     steps:
       - uses: actions/checkout@f43a0e5ff2bd294095638e18286ca9a3d1956744 # v3
-      - uses: github/codeql-action/init@563dcafdfe28a0bb82e2c272d84924f17b628540 # v2
+      - uses: github/codeql-action/init@eb055d739abdc2e8de2e5f4ba1a8b246daa779aa # v3
         with:
           languages: ${{ matrix.language }}
-      - uses: github/codeql-action/autobuild@563dcafdfe28a0bb82e2c272d84924f17b628540 # v2
-      - uses: github/codeql-action/analyze@563dcafdfe28a0bb82e2c272d84924f17b628540 # v2
+      - uses: github/codeql-action/autobuild@eb055d739abdc2e8de2e5f4ba1a8b246daa779aa # v3
+      - uses: github/codeql-action/analyze@eb055d739abdc2e8de2e5f4ba1a8b246daa779aa # v3
         with:
           category: "/language:${{matrix.language}}"
